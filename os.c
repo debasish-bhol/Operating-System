@@ -11,6 +11,8 @@ pthread_mutex_t m_reader, m_writer;
 int maain() {
 pthread_mutex_init(&m_reader, NULL);
 pthread_mutex_init(&m_writer, NULL);
+pthread_join(&m_reader, NULL);
+pthread_join(&m_writer, NULL);
 
 
 }
