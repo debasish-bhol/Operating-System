@@ -44,14 +44,15 @@ pthread_mutex_lock(&m_reader);
 read_count++;
 if(read_count == 1) {
 	pthread_mutex_lock(&m_writer);
-	printf("\nReader %d is reading data and data value is:\t\t%d", p, data);
+	//printf("\n\nReader %d is reading data and data value is:\t\t%d\n", p, data);
+	printf("\n\nThe value read by reader %d is \t\t%d\n", p, data);
+	//printf("Total number of reader reading is %d", read_count);
 }
 pthread_mutex_unlock(&m_reader);
 
 printf("\nNumber of reader present is: %d", read_count);
-// Reader Operation
 
-pthread_mutex_lock(&m_reader);
+//pthread_mutex_lock(&m_reader);
 read_count--;
 if(read_count == 0) {
 	printf("\nReader %d completed his work", p);
